@@ -1,5 +1,5 @@
 # code-for-go-lang
-code-for-go-lang
+Here i try to build some basic and very practical project which is help to learn Go Lang programming language.
 
 <b>Project Title: My Go Server</b> <br>
 
