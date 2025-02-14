@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
+	"os/exec"
 )
 
 func formHandler(w http.ResponseWriter, r *http.Request) {
@@ -30,6 +32,10 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	cmd := exec.Command("cmd", "/c", "cls")
+	cmd.Stdout = os.Stdout
+	cmd.Run()
+
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fileServer)
 	http.HandleFunc("/form", formHandler)
